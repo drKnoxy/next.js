@@ -162,7 +162,7 @@ _regenerator.default.mark(function _callee() {
           return _loadable.default.preloadReady(dynamicIds || []);
 
         case 22:
-          exports.router = router = (0, _router2.createRouter)(page, nextExport ? window.location.search.replace(/^?/, '') : query, asPath, {
+          exports.router = router = (0, _router2.createRouter)(page, nextExport ? window.location.search.replace(/^\?/, '') : query, asPath, {
             initialProps: props,
             pageLoader: pageLoader,
             App: App,

@@ -94,7 +94,7 @@ export default async ({
 
   router = createRouter(
     page,
-    nextExport ? window.location.search.replace(/^?/, '') : query,
+    nextExport ? window.location.search.replace(/^\?/, '') : query,
     asPath,
     {
       initialProps: props,
