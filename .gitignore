@@ -1,5 +1,5 @@
 # build output
-dist
+test/integration/dist-dir/dist
 .next
 
 # dependencies
