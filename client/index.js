@@ -28,7 +28,8 @@ const {
     buildId,
     assetPrefix,
     runtimeConfig,
-    dynamicIds
+    dynamicIds,
+    nextExport
   }
 } = window
 
@@ -91,14 +92,19 @@ export default async ({
 
   await Loadable.preloadReady(dynamicIds || [])
 
-  router = createRouter(page, query, asPath, {
-    initialProps: props,
-    pageLoader,
-    App,
-    Component,
-    ErrorComponent,
-    err: initialErr
-  })
+  router = createRouter(
+    page,
+    nextExport ? window.location.search.replace(/^?/, '') : query,
+    asPath,
+    {
+      initialProps: props,
+      pageLoader,
+      App,
+      Component,
+      ErrorComponent,
+      err: initialErr
+    }
+  )
 
   router.subscribe(({ App, Component, props, err }) => {
     render({ App, Component, props, err, emitter })
